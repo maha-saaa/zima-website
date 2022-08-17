@@ -1,5 +1,58 @@
-import styles from "./index.module.css";
+import styles from "./index.module.scss";
+import Image from "next/image";
+import { Link } from "react-scroll";
+import zimaLogo from "@/public/images/zima-logo.png";
 
-export default function Navbar() {
-  return <></>;
-}
+type navbarMenuType = {
+  key: string;
+  title: string;
+}[];
+
+const navbarMenu: navbarMenuType = [
+  {
+    key: "Home",
+    title: "Home",
+  },
+  {
+    key: "Whatwedo",
+    title: "What we do",
+  },
+  {
+    key: "About",
+    title: "About",
+  },
+];
+
+const Navbar: React.FunctionComponent<any> = (): JSX.Element => {
+  return (
+    <section className={styles.wrapper}>
+      <div>
+        <Image src={zimaLogo} alt="logo" />
+      </div>
+      <div className={styles.menu}>
+        {navbarMenu?.map((temp) => (
+          <li key={temp.key}>
+            <Link
+              activeClass="active"
+              to={temp.key}
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={500}
+            >
+              <span>{temp.title.slice(0, 2)}</span>
+              <span>{temp.title.slice(2)}</span>
+            </Link>
+          </li>
+        ))}
+      </div>
+      <div className={styles.button}>
+        <a href={"./"} target="_blank" rel="noreferrer noopener">
+          <span>Connect</span>
+        </a>
+      </div>
+    </section>
+  );
+};
+
+export default Navbar;

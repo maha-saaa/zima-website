@@ -1,0 +1,43 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6.7vh 8.3vw;
+  gap: 10px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  gap: 50px;
+  > li > a {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--whiteWithOpacity);
+    cursor: pointer;
+    &:hover {
+      color: var(--white);
+      font-weight: 600;
+    }
+  }
+}
+
+.button {
+  background-color: var(--primaryBlue);
+  padding: 12px 24px;
+  border-radius: 4px;
+  > a > span {
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .menu {
+    display: none;
+  }
+}
