@@ -3,8 +3,12 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 6.7vh 8.3vw;
+  padding: 6.7vh 8.3vw 2vh 8.3vw;
   gap: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: black;
 }
 
 .menu {
@@ -24,6 +28,9 @@
       font-weight: 600;
     }
   }
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
 }
 
 .button {
@@ -33,11 +40,5 @@
   > a > span {
     font-size: 0.8rem;
     font-weight: 500;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .menu {
-    display: none;
   }
 }

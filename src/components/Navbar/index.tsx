@@ -18,6 +18,10 @@ const navbarMenu: navbarMenuType = [
     title: "What we do",
   },
   {
+    key: "Projects",
+    title: "Projects",
+  },
+  {
     key: "About",
     title: "About",
   },
