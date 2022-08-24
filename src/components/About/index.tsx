@@ -8,7 +8,7 @@ const About: React.FunctionComponent<any> = (): JSX.Element => {
         className={styles.title}
         initial="hidden"
         whileInView="visible"
-        // viewport={{ once: true }}
+        viewport={{ once: true }}
         transition={{ duration: 1 }}
         variants={{
           visible: { opacity: 1, scale: 1 },

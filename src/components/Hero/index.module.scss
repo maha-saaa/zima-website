@@ -4,12 +4,18 @@
   align-items: center;
   gap: 16px;
   padding: 25vh 7vw;
+  @media screen and (max-width: 600px) {
+    padding: 10vh 7vw;
+  }
 }
 
 .title {
   font-size: 4rem;
   font-weight: 400;
   text-align: center;
+  @media screen and (max-width: 600px) {
+    font-size: 2.5rem;
+  }
 }
 
 .desc {

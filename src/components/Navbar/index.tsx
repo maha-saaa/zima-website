@@ -44,8 +44,7 @@ const Navbar: React.FunctionComponent<any> = (): JSX.Element => {
               offset={-100}
               duration={500}
             >
-              <span>{temp.title.slice(0, 2)}</span>
-              <span>{temp.title.slice(2)}</span>
+              {temp.title}
             </Link>
           </li>
         ))}

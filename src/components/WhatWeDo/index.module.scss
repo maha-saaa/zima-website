@@ -5,6 +5,9 @@
   justify-content: flex-end;
   gap: 113px;
   padding: 25vh 7vw;
+  @media screen and (max-width: 600px) {
+    padding: 10vh 7vw;
+  }
 }
 
 .text {
