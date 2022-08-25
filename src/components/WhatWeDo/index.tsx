@@ -13,7 +13,7 @@ const variants = {
   },
 };
 
-const WhatWeDo: React.FunctionComponent<any> = (): JSX.Element => {
+const WhatWeDo = (): JSX.Element => {
   const titleRef = useRef(null);
   const isInView = useInView(titleRef);
   const { scrollYProgress } = useScroll();
@@ -22,8 +22,8 @@ const WhatWeDo: React.FunctionComponent<any> = (): JSX.Element => {
     [0, 1],
     [0, 100 * -1.5]
   );
-  const descXTransferAnim = useTransform(scrollYProgress, [0, 0.25], [1200, 0]);
-  const descYTransferAnim = useTransform(scrollYProgress, [0, 0.3], [-900, 0]);
+  const descXTransferAnim = useTransform(scrollYProgress, [0, 0.1], [1200, 0]);
+  const descYTransferAnim = useTransform(scrollYProgress, [0, 0.1], [-1000, 0]);
 
   return (
     <section id="Whatwedo" className={styles.wrapper}>

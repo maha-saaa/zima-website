@@ -21,10 +21,6 @@ const navbarMenu: navbarMenuType = [
     key: "Projects",
     title: "Projects",
   },
-  {
-    key: "About",
-    title: "About",
-  },
 ];
 
 const Navbar: React.FunctionComponent<any> = (): JSX.Element => {
@@ -50,9 +46,16 @@ const Navbar: React.FunctionComponent<any> = (): JSX.Element => {
         ))}
       </div>
       <div className={styles.button}>
-        <a href={"./"} target="_blank" rel="noreferrer noopener">
-          <span>Connect</span>
-        </a>
+          <Link
+            activeClass="active"
+            to={"Contact"}
+            spy={true}
+            smooth={true}
+            offset={-100}
+            duration={500}
+          >
+            Contact
+          </Link>
       </div>
     </section>
   );

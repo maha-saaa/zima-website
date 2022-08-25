@@ -43,7 +43,7 @@ const projectsArr: project[] = [
   },
 ];
 
-const Projects: React.FunctionComponent<any> = (): JSX.Element => {
+const Projects = (): JSX.Element => {
   const [selectedProject, setSelectedProject] = useState<project>(
     projectsArr[0]
   );

@@ -1,0 +1,11 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  span:first-child {
+    font-size: 4rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 7vh;
+  }
+}

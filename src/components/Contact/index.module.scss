@@ -1,0 +1,101 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 7.8vw;
+  padding: 10vh 7vw;
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+  }
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 3.2vh;
+  span:nth-child(1) {
+    font-size: 1.1rem;
+    font-weight: 300;
+    display: inline-block;
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--primaryBlue);
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+    &:hover:after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+      color: var(--primaryBlue);
+      font-weight: 600;
+    }
+  }
+  span:nth-child(2) {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+}
+
+.formWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  span:nth-child(1) {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--primaryBlue);
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 3vh 0;
+    input {
+      border: none;
+      background-color: var(--darkBlue);
+      border-radius: 4px;
+      min-height: 35px;
+      width: 26vw;
+      margin-top: 2vh;
+      padding: 8px;
+    }
+  }
+  button:last-child {
+    border: none;
+    background-color: black;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--white);
+    margin: 0 0.2em;
+    background-position-y: 30%;
+    background-image: linear-gradient(transparent 50%, var(--primaryBlue) 50%);
+    transition: background 500ms ease;
+    background-size: 2px;
+    background-size: auto 175%;
+    display: inline-block;
+    transition: all linear 150ms;
+    &:hover {
+      background-position-y: 100%;
+      cursor: pointer;
+    }
+  }
+}

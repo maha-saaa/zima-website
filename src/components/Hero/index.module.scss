@@ -4,6 +4,7 @@
   align-items: center;
   gap: 16px;
   padding: 25vh 7vw;
+  position: relative;
   @media screen and (max-width: 600px) {
     padding: 10vh 7vw;
   }
@@ -22,4 +23,36 @@
   font-size: 1.12rem;
   font-weight: 300;
   text-align: center;
+}
+
+.contact {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 20vh;
+  background-position-y: 30%;
+  background-image: linear-gradient(transparent 50%, var(--primaryBlue) 50%);
+  transition: background 500ms ease;
+  background-size: 2px;
+  background-size: auto 175%;
+  display: inline-block;
+  transition: all linear 150ms;
+  &:hover {
+    background-position-y: 100%;
+    cursor: pointer;
+  }
+}
+
+.scroll {
+  position: absolute;
+  left: 8.3vw;
+  bottom: 16.3vh;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  span:first-child {
+    writing-mode: vertical-rl;
+    transform: rotate(-180deg);
+    font-size: 1rem;
+    font-weight: 600;
+  }
 }
