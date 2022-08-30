@@ -9,6 +9,7 @@ const Cube = (props: BoxProps) => {
   // This reference will give us direct access to the mesh
   const mesh = useRef();
   // Subscribe this component to the render-loop, rotate the mesh every frame
+    // @ts-ignore: Unreachable code error
   useFrame((state, delta) => (mesh.current.rotation.y += 0.01));
   // Return view, these are regular three.js elements expressed in JSX
   return (

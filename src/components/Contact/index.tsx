@@ -64,6 +64,7 @@ const Contact = (): JSX.Element => {
     watch,
     formState: { errors },
   } = useForm<Inputs>();
+  // @ts-ignore: Unreachable code error
   const watchFields = watch(["timeline", "budget"]);
   const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
 
@@ -146,7 +147,13 @@ const Contact = (): JSX.Element => {
               whileInView="visible"
               variants={wordAnimation}
             >{`Name & company`}</motion.label>
-            <input type="name" {...register("name")} name="name" />
+            
+            <input
+              type="name"
+              // @ts-ignore: Unreachable code error
+               {...register("name")}
+              name="name"
+            />
           </div>
           <div>
             <motion.label
@@ -158,6 +165,7 @@ const Contact = (): JSX.Element => {
             </motion.label>
             <input
               type="email"
+              // @ts-ignore: Unreachable code error
               {...register("email", { required: true })}
               name="email"
             />
@@ -174,6 +182,7 @@ const Contact = (): JSX.Element => {
               type="range"
               min={1}
               max={100}
+              // @ts-ignore: Unreachable code error
               {...register("budget")}
               name="budget"
             />
@@ -191,6 +200,7 @@ const Contact = (): JSX.Element => {
               type="range"
               min={1}
               max={12}
+              // @ts-ignore: Unreachable code error
               {...register("timeline")}
               name="timeline"
             />
@@ -206,6 +216,7 @@ const Contact = (): JSX.Element => {
             </motion.label>
             <input
               type="text"
+              // @ts-ignore: Unreachable code error
               {...register("description")}
               name="description"
             />
