@@ -1,13 +1,20 @@
+import styles from "./index.module.scss";
 import Hero from "@/components/Hero";
 import WhatWeDo from "@/components/WhatWeDo";
-import About from "@/components/About";
+import Projects from "@/components/projects";
+import Contact from "@/components/Contact";
+import WebDesign from "../WebDesign";
 
-const Base: React.FunctionComponent<any> = (): JSX.Element => {
+const Base = (): JSX.Element => {
   return (
     <>
-      <Hero />
-      <WhatWeDo />
-      <About />
+      <div className={styles.firstTwoSectionsWrapper}>
+        <Hero />
+        <WhatWeDo />
+      </div>
+      <WebDesign />
+      <Projects />
+      <Contact />
     </>
   );
 };

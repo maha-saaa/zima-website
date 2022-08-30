@@ -15,9 +15,11 @@ const nextConfig = {
         "react-dom": "preact/compat",
       });
     }
-
     return config;
   },
 }
 
 module.exports = nextConfig
+
+// const withTM = require('next-transpile-modules')(['somemodule', 'and-another']); // pass the modules you would like to see transpiled
+// module.exports = withTM({});

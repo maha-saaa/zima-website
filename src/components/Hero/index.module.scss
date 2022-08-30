@@ -3,17 +3,58 @@
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  padding: 31vh 7vw;
+  padding: 27vh 7vw;
+  position: relative;
+  @media screen and (max-width: 600px) {
+    padding: 10vh 7vw;
+  }
 }
 
 .title {
   font-size: 4rem;
   font-weight: 400;
   text-align: center;
+  @media screen and (max-width: 600px) {
+    font-size: 2.5rem;
+  }
 }
 
 .desc {
   font-size: 1.12rem;
   font-weight: 300;
   text-align: center;
+}
+
+.ourWork {
+  font-size: 1.5rem;
+  font-weight: 600;
+  position: absolute;
+  bottom: 0vh;
+  text-align: center;
+  background-position-y: 30%;
+  background-image: linear-gradient(transparent 50%, var(--primaryBlue) 50%);
+  transition: background 500ms ease;
+  background-size: 2px;
+  background-size: auto 175%;
+  display: inline-block;
+  transition: all linear 150ms;
+  &:hover {
+    background-position-y: 100%;
+    cursor: pointer;
+  }
+}
+
+.scroll {
+  position: absolute;
+  left: 8.3vw;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  span:first-child {
+    writing-mode: vertical-rl;
+    transform: rotate(-180deg);
+    font-size: 1rem;
+    font-weight: 600;
+  }
 }
