@@ -37,7 +37,7 @@ const WhatWeDo = (): JSX.Element => {
           style={{ y: titleTransferAnim }}
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
-          From design to code and back.
+          Full-service design and development agency ☄️
         </motion.span>
         <motion.span
           className={styles.desc}
@@ -46,11 +46,12 @@ const WhatWeDo = (): JSX.Element => {
             y: descYTransferAnim,
           }}
         >
-          We are a full-service digital agency that builds immersive user
-          experience. Our team creates an exceptional visualization and
-          thought-out functionality. We believe, our clients deserve to be
-          remarkable in their business. The studio develops the products people
-          appreciate all around the world.
+          We are Blockchain specialists with extensive design and development
+          expertise, specifically in the fast-growing blockchain space.
+          Designing user interfaces, user experiences, 3D design, illustrations,
+          prototyping, etc. We build your DApps, NFT marketplaces, and NFT
+          collections, with our experience in this giant industry our team has
+          the expertise to bring your vision to life.
         </motion.span>
       </div>
       <div>

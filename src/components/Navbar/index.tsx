@@ -1,7 +1,9 @@
 import styles from "./index.module.scss";
 import Image from "next/image";
 import { Link } from "react-scroll";
+import { motion } from "framer-motion";
 import zimaLogo from "@/public/images/zima-logo.png";
+import { wordAnimation } from "@/utils/animations";
 
 type navbarMenuType = {
   key: string;
@@ -25,7 +27,12 @@ const navbarMenu: navbarMenuType = [
 
 const Navbar: React.FunctionComponent<any> = (): JSX.Element => {
   return (
-    <section className={styles.wrapper}>
+    <motion.section
+      className={styles.wrapper}
+      initial="hidden"
+      whileInView="visible"
+      variants={wordAnimation}
+    >
       <div>
         <Image src={zimaLogo} alt="logo" />
       </div>
@@ -46,18 +53,18 @@ const Navbar: React.FunctionComponent<any> = (): JSX.Element => {
         ))}
       </div>
       <div className={styles.button}>
-          <Link
-            activeClass="active"
-            to={"Contact"}
-            spy={true}
-            smooth={true}
-            offset={-100}
-            duration={500}
-          >
-            Contact
-          </Link>
+        <Link
+          activeClass="active"
+          to={"Contact"}
+          spy={true}
+          smooth={true}
+          offset={-100}
+          duration={500}
+        >
+          Contact
+        </Link>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

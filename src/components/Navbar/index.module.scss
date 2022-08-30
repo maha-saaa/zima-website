@@ -18,7 +18,7 @@
   align-items: center;
   list-style: none;
   gap: 50px;
-  > li > a {
+  li a {
     font-size: 1rem;
     font-weight: 500;
     color: var(--whiteWithOpacity);
@@ -57,6 +57,7 @@
   background-color: var(--primaryBlue);
   padding: 12px 24px;
   border-radius: 4px;
+  cursor: pointer;
   > a > span {
     font-size: 0.8rem;
     font-weight: 500;

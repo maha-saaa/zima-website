@@ -15,6 +15,7 @@
   font-weight: 300;
   display: inline-block;
   position: relative;
+  width: 40vw;
   &:after {
     content: "";
     position: absolute;
@@ -97,6 +98,6 @@
 
 .image {
   @media screen and (max-width: 600px) {
-    display: none;
+    // display: none;
   }
 }

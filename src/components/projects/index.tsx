@@ -1,45 +1,64 @@
 import styles from "./index.module.scss";
-import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
-import earth from "@/public/images/earth.png";
+import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
+import { motion } from "framer-motion";
+import reticular from "@/public/images/reticular.png";
+import avacadoCamp from "@/public/images/3dAvacadoCamp.png";
+import zinoNftLandingPage from "@/public/images/zinoNftLandingPage.png";
+import lonelyAlNftCollection from "@/public/images/lonelyAlNftCollection.png";
+import mobileCryptoWallet from "@/public/images/mobileCryptoWallet.png";
+import { wordAnimation } from "@/utils/animations";
+import {
+  RETICULAR,
+  AVACADOCAMP,
+  ZINONFTLANDINGPAGE,
+  LONELYALNFTCOLLECTION,
+  MOBILECRYPTOWALLET,
+} from "@/constants/urls";
 
 type project = {
   id: string;
   name: string;
   desc: string;
   link: string;
-  image: string;
+  image: StaticImageData;
 };
 
 const projectsArr: project[] = [
   {
     id: "01",
-    name: "COINAGE trading platform",
-    desc: "Coinage is an automated market-making (AMM) decentralised exchange (DEX) for the Binance, Polygon and Ethereum network.",
-    link: "",
-    image: "",
+    name: "Reticular Trading Platform",
+    desc: "As we can see the chart is easy to understand, multiple indicators along with the tools can be applied in the chart and it is free. The candlestick pattern helps give the reader a clearer view.",
+    link: RETICULAR,
+    image: reticular,
   },
   {
     id: "02",
-    name: "COINAGE trading platform",
-    desc: "decentralised exchange (DEX) for the Binance, Polygon and Ethereum network.",
-    link: "",
-    image: "",
+    name: "3D Avacado Camp",
+    desc: "In Zima we can create your NFT collection, your website, and your Smart Contract! we can help you choosing your traits and Rarity. come up with your collection Idea and leave the rest to us!",
+    link: AVACADOCAMP,
+    image: avacadoCamp,
   },
   {
     id: "03",
-    name: "COINAGE trading platform",
-    desc: "exchange (DEX) for the Binance, Polygon and Ethereum network.",
-    link: "",
-    image: "",
+    name: "Zino NFT Marketplace",
+    desc: "Welcome to the NFT Marketplace Explore page, You can Create, Buy and Sell Hype NFTs here!!",
+    link: ZINONFTLANDINGPAGE,
+    image: zinoNftLandingPage,
   },
   {
     id: "04",
-    name: "COINAGE trading platform",
-    desc: "Polygon and Ethereum network.",
-    link: "",
-    image: "",
+    name: "LonelyAl NFT Collection",
+    desc: "LonelyAl is one of the NFT collections that we worked on, we designed and generated the NFTs.",
+    link: LONELYALNFTCOLLECTION,
+    image: lonelyAlNftCollection,
+  },
+  {
+    id: "05",
+    name: "Crypto Wallet",
+    desc: "Have an Idea for a new wallet app? we have designed and developed +10 cryptocurrency wallets!",
+    link: MOBILECRYPTOWALLET,
+    image: mobileCryptoWallet,
   },
 ];
 
@@ -62,19 +81,51 @@ const Projects = (): JSX.Element => {
                   : styles.notSelected
               }
             >
-              {temp.id}
+              <motion.span
+                initial="hidden"
+                whileInView="visible"
+                variants={wordAnimation}
+              >
+                {temp.id}
+              </motion.span>
             </div>
           );
         })}
       </div>
       <div className={styles.desc}>
-        <span className={styles.header}>SELECTED WORK</span>
-        <span>{selectedProject.name}</span>
-        <span>{selectedProject.desc}</span>
-        <span className={styles.footer}>VIEW PROJECT</span>
+        <motion.span
+          className={styles.header}
+          initial="hidden"
+          whileInView="visible"
+          variants={wordAnimation}
+        >
+          SELECTED WORK
+        </motion.span>
+        <motion.span
+          initial="hidden"
+          whileInView="visible"
+          variants={wordAnimation}
+        >
+          {selectedProject.name}
+        </motion.span>
+        <motion.span
+          initial="hidden"
+          whileInView="visible"
+          variants={wordAnimation}
+        >
+          {selectedProject.desc}
+        </motion.span>
+        <motion.span
+          className={styles.footer}
+          initial="hidden"
+          whileInView="visible"
+          variants={wordAnimation}
+        >
+          VIEW PROJECT
+        </motion.span>
       </div>
       <div className={styles.image}>
-        <Image src={earth} alt="earth" />
+        <Image src={selectedProject.image} alt="earth" width={454} height={454} />
       </div>
     </section>
   );

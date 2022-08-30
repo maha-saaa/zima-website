@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  padding: 25vh 7vw;
+  padding: 27vh 7vw;
   position: relative;
   @media screen and (max-width: 600px) {
     padding: 10vh 7vw;
@@ -25,10 +25,12 @@
   text-align: center;
 }
 
-.contact {
+.ourWork {
   font-size: 1.5rem;
   font-weight: 600;
-  margin-top: 20vh;
+  position: absolute;
+  bottom: 0vh;
+  text-align: center;
   background-position-y: 30%;
   background-image: linear-gradient(transparent 50%, var(--primaryBlue) 50%);
   transition: background 500ms ease;
@@ -45,7 +47,7 @@
 .scroll {
   position: absolute;
   left: 8.3vw;
-  bottom: 16.3vh;
+  bottom: 0;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
