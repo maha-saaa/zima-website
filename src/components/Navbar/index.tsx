@@ -29,9 +29,9 @@ const Navbar: React.FunctionComponent<any> = (): JSX.Element => {
   return (
     <motion.section
       className={styles.wrapper}
-      initial="hidden"
-      whileInView="visible"
-      variants={wordAnimation}
+      // initial="hidden"
+      // whileInView="visible"
+      // variants={wordAnimation}
     >
       <div>
         <Image src={zimaLogo} alt="logo" />
