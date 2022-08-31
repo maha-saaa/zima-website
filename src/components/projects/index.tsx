@@ -82,9 +82,9 @@ const Projects = (): JSX.Element => {
               }
             >
               <motion.span
-                // initial="hidden"
-                // whileInView="visible"
-                // variants={wordAnimation}
+                initial="hidden"
+                whileInView="visible"
+                variants={wordAnimation}
               >
                 {temp.id}
               </motion.span>
@@ -95,37 +95,42 @@ const Projects = (): JSX.Element => {
       <div className={styles.desc}>
         <motion.span
           className={styles.header}
-          // initial="hidden"
-          // whileInView="visible"
-          // variants={wordAnimation}
+          initial="hidden"
+          whileInView="visible"
+          variants={wordAnimation}
         >
           SELECTED WORK
         </motion.span>
         <motion.span
-          // initial="hidden"
-          // whileInView="visible"
-          // variants={wordAnimation}
+          initial="hidden"
+          whileInView="visible"
+          variants={wordAnimation}
         >
           {selectedProject.name}
         </motion.span>
         <motion.span
-          // initial="hidden"
-          // whileInView="visible"
-          // variants={wordAnimation}
+          initial="hidden"
+          whileInView="visible"
+          variants={wordAnimation}
         >
           {selectedProject.desc}
         </motion.span>
         <motion.span
           className={styles.footer}
-          // initial="hidden"
-          // whileInView="visible"
-          // variants={wordAnimation}
+          initial="hidden"
+          whileInView="visible"
+          variants={wordAnimation}
         >
           VIEW PROJECT
         </motion.span>
       </div>
       <div className={styles.image}>
-        <Image src={selectedProject.image} alt="earth" width={454} height={454} />
+        <Image
+          src={selectedProject.image}
+          alt="earth"
+          width={454}
+          height={454}
+        />
       </div>
     </section>
   );

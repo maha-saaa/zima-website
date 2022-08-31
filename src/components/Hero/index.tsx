@@ -15,20 +15,20 @@ const Hero = (): JSX.Element => {
     <section id="Home" className={styles.wrapper}>
       <motion.span
         className={styles.title}
-        // style={{ x: transferAnim }}
-        // initial="hidden"
-        // whileInView="visible"
-        // viewport={{ once: true }}
-        // variants={wordAnimation}
+        style={{ x: transferAnim }}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={wordAnimation}
       >
         Let’s make something trendy and cool!
       </motion.span>
       <motion.span
         className={styles.desc}
-        // style={{ x: transferAnim }}
-        // initial="hidden"
-        // whileInView="visible"
-        // variants={wordAnimation}
+        style={{ x: transferAnim }}
+        initial="hidden"
+        whileInView="visible"
+        variants={wordAnimation}
       >
         Zima Agency works with
         <span style={{ fontWeight: "bold" }}> top rated</span> talented people
@@ -47,9 +47,9 @@ const Hero = (): JSX.Element => {
       </Link>
       <div className={styles.scroll}>
         <motion.span
-          // initial="hidden"
-          // whileInView="visible"
-          // variants={wordAnimation}
+          initial="hidden"
+          whileInView="visible"
+          variants={wordAnimation}
         >
           Scroll
         </motion.span>

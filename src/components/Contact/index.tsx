@@ -98,17 +98,17 @@ const Contact = (): JSX.Element => {
     <section id="Contact" className={styles.wrapper}>
       <div className={styles.social}>
         <motion.span
-          // initial="hidden"
-          // whileInView="visible"
-          // variants={wordAnimation}
+          initial="hidden"
+          whileInView="visible"
+          variants={wordAnimation}
           className={styles.underline}
         >
           Contact
         </motion.span>
         <motion.span
-          // initial="hidden"
-          // whileInView="visible"
-          // variants={wordAnimation}
+          initial="hidden"
+          whileInView="visible"
+          variants={wordAnimation}
         >
           {ZIMAEMAIL}
         </motion.span>
@@ -134,32 +134,32 @@ const Contact = (): JSX.Element => {
       </div>
       <div className={styles.formWrapper}>
         <motion.span
-          // initial="hidden"
-          // whileInView="visible"
-          // variants={wordAnimation}
+          initial="hidden"
+          whileInView="visible"
+          variants={wordAnimation}
         >
           Let’s Talk!
         </motion.span>
         <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
           <div>
             <motion.label
-              // initial="hidden"
-              // whileInView="visible"
-              // variants={wordAnimation}
+              initial="hidden"
+              whileInView="visible"
+              variants={wordAnimation}
             >{`Name & company`}</motion.label>
-            
+
             <input
               type="name"
               // @ts-ignore: Unreachable code error
-               {...register("name")}
+              {...register("name")}
               name="name"
             />
           </div>
           <div>
             <motion.label
-              // initial="hidden"
-              // whileInView="visible"
-              // variants={wordAnimation}
+              initial="hidden"
+              whileInView="visible"
+              variants={wordAnimation}
             >
               Email
             </motion.label>
@@ -172,9 +172,9 @@ const Contact = (): JSX.Element => {
           </div>
           <div>
             <motion.label
-              // initial="hidden"
-              // whileInView="visible"
-              // variants={wordAnimation}
+              initial="hidden"
+              whileInView="visible"
+              variants={wordAnimation}
             >
               Project Budget
             </motion.label>
@@ -190,9 +190,9 @@ const Contact = (): JSX.Element => {
           </div>
           <div>
             <motion.label
-              // initial="hidden"
-              // whileInView="visible"
-              // variants={wordAnimation}
+              initial="hidden"
+              whileInView="visible"
+              variants={wordAnimation}
             >
               Timeline
             </motion.label>
@@ -208,9 +208,9 @@ const Contact = (): JSX.Element => {
           </div>
           <div>
             <motion.label
-              // initial="hidden"
-              // whileInView="visible"
-              // variants={wordAnimation}
+              initial="hidden"
+              whileInView="visible"
+              variants={wordAnimation}
             >
               Project description
             </motion.label>
