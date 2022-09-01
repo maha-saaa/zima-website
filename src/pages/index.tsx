@@ -9,7 +9,7 @@ import Cube from "@/components/Cube";
 const DOM = () => {
   return (
     <Layout>
-      <main style={{ backgroundColor: "black" }}>
+      <main>
         <Base />
       </main>
     </Layout>

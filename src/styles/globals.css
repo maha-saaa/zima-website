@@ -4,7 +4,6 @@ body {
   margin: 0;
   font-family: "Manrope";
   cursor: url(../../public/images/cursor.png), auto;
-  background-color: black;
 }
 
 a {
@@ -23,7 +22,6 @@ a {
   body {
     color: white;
     background: black;
-    background-color: black;
     font-family: "Manrope";
   }
 }
