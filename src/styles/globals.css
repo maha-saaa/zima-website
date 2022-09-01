@@ -4,7 +4,7 @@ body {
   margin: 0;
   font-family: "Manrope";
   cursor: url(../../public/images/cursor.png), auto;
-  background-color: var(--background);
+  background: black;
   color: var(--white);
 }
 
@@ -15,15 +15,4 @@ a {
 
 * {
   box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-    font-family: "Manrope";
-  }
 }
