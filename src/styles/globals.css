@@ -4,6 +4,8 @@ body {
   margin: 0;
   font-family: "Manrope";
   cursor: url(../../public/images/cursor.png), auto;
+  background-color: var(--background);
+  color: var(--white);
 }
 
 a {
