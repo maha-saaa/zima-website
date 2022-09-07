@@ -16,17 +16,17 @@
   align-items: flex-start;
   justify-content: flex-start;
   gap: 3.2vh;
-  span:nth-child(1) {
+  > span:nth-child(1) {
     font-size: 1.1rem;
     font-weight: 300;
     display: inline-block;
     position: relative;
   }
-  span:nth-child(2) {
+  > span:nth-child(2) {
     font-size: 1.5rem;
     font-weight: 500;
   }
-  div:nth-child(3) {
+  > div:nth-child(3) {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -74,13 +74,13 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  div {
+  > div {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
     margin: 3vh 0;
-    input {
+    > input {
       border: none;
       background-color: var(--darkBlue);
       border-radius: 4px;
@@ -88,9 +88,10 @@
       min-width: 26vw;
       margin-top: 2vh;
       padding: 8px;
+      color: var(--white);
     }
   }
-  button:last-child {
+  > button:last-child {
     border: none;
     background-color: black;
     font-size: 1.5rem;
@@ -108,5 +109,38 @@
       background-position-y: 100%;
       cursor: pointer;
     }
+  }
+}
+
+.budget {
+  margin: 3vh 0;
+  > button {
+    background-color: var(--background);
+    border: none;
+    color: var(--whiteWithOpacity);
+    font-size: 0.87rem;
+    font-weight: 500;
+    padding-right: 1.9vw;
+    &:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--primaryBlue);
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+    &:hover:after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+      color: var(--primaryBlue);
+    }
+  }
+  :hover {
+    transform: scaleX(1);
+    color: var(--white);
   }
 }

@@ -26,8 +26,11 @@
 }
 
 .desc {
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 400;
+  @media screen and (max-width: 600px) {
+    font-size: 0.6rem;
+  }
 }
 
 .box {

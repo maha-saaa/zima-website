@@ -12,4 +12,4 @@ export const LONELYALNFTCOLLECTION =
   "https://dribbble.com/shots/19070471-2D-NFT-Collection";
 export const MOBILECRYPTOWALLET =
   "https://dribbble.com/shots/19243068-Crypto-wallet-Mobile-app";
-export const ZIMAEMAIL = "hey@zimaagency.com";
+export const ZIMAEMAIL = "Hey@zimaagency.com";

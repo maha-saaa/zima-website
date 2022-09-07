@@ -1,7 +1,7 @@
 import styles from "./index.module.scss";
 import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import reticular from "@/public/images/reticular.png";
 import avacadoCamp from "@/public/images/3dAvacadoCamp.png";
 import zinoNftLandingPage from "@/public/images/zinoNftLandingPage.png";
@@ -101,37 +101,59 @@ const Projects = (): JSX.Element => {
         >
           SELECTED WORK
         </motion.span>
-        <motion.span
-          initial="hidden"
-          whileInView="visible"
-          variants={wordAnimation}
+        <AnimatePresence exitBeforeEnter>
+          <motion.span
+            key={selectedProject ? selectedProject.id : "empty"}
+            initial="hidden"
+            whileInView="visible"
+            variants={wordAnimation}
+          >
+            {selectedProject.name}
+          </motion.span>
+        </AnimatePresence>
+        <AnimatePresence exitBeforeEnter>
+          <motion.span
+            key={selectedProject ? selectedProject.id : "empty"}
+            initial="hidden"
+            whileInView="visible"
+            variants={wordAnimation}
+          >
+            {selectedProject.desc}
+          </motion.span>
+        </AnimatePresence>
+        <a
+          key={selectedProject.id}
+          href={selectedProject.link}
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          {selectedProject.name}
-        </motion.span>
-        <motion.span
-          initial="hidden"
-          whileInView="visible"
-          variants={wordAnimation}
-        >
-          {selectedProject.desc}
-        </motion.span>
-        <motion.span
-          className={styles.footer}
-          initial="hidden"
-          whileInView="visible"
-          variants={wordAnimation}
-        >
-          VIEW PROJECT
-        </motion.span>
+          <motion.span
+            className={styles.footer}
+            initial="hidden"
+            whileInView="visible"
+            variants={wordAnimation}
+          >
+            VIEW PROJECT
+          </motion.span>
+        </a>
       </div>
-      <div className={styles.image}>
-        <Image
-          src={selectedProject.image}
-          alt="earth"
-          width={454}
-          height={454}
-        />
-      </div>
+      <AnimatePresence exitBeforeEnter>
+        <motion.div
+          key={selectedProject ? selectedProject.id : "empty"}
+          className={styles.image}
+          animate={{
+            rotate: selectedProject ? 360 : 0,
+          }}
+          transition={{ duration: 1 }}
+        >
+          <Image
+            src={selectedProject.image}
+            alt="earth"
+            width={454}
+            height={454}
+          />
+        </motion.div>
+      </AnimatePresence>
     </section>
   );
 };

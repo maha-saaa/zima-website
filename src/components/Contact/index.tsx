@@ -1,7 +1,7 @@
 import styles from "./index.module.scss";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import { useState } from "react";
 import { wordAnimation } from "@/utils/animations";
 import twitterWhite from "@/public/images/twitter-white.png";
@@ -51,6 +51,29 @@ const socialMediaArr = [
   },
 ];
 
+const budgetArr = [
+  {
+    id: "0",
+    text: "Under $10k",
+  },
+  {
+    id: "1",
+    text: "$10k-$20k",
+  },
+  {
+    id: "2",
+    text: "$20k-$50k",
+  },
+  {
+    id: "3",
+    text: "$50k-$100k",
+  },
+  {
+    id: "4",
+    text: "$100k+",
+  },
+];
+
 type Inputs = {
   example: string;
   exampleRequired: string;
@@ -62,11 +85,31 @@ const Contact = (): JSX.Element => {
     register,
     handleSubmit,
     watch,
+    control,
     formState: { errors },
   } = useForm<Inputs>();
   // @ts-ignore: Unreachable code error
-  const watchFields = watch(["timeline", "budget"]);
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+  const watchFields = watch(["timeline"]);
+
+  const onSubmit: SubmitHandler<Inputs> = async (data: any) => {
+    const formData = {
+      email: data.email,
+      subject: `${data.nameAndCompany}'s Project Offer`,
+      message: `company name: ${data.nameAndCompany},
+      email: ${data.email},
+      budget: ${data.budget},
+      timeline: ${data.timeline},
+      description: ${data.description}`,
+    };
+
+    await fetch("/api/mail", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+  };
 
   const onHoverIcon = (id: string) => {
     const newSocialMediaArr = socialMediaArr.map((temp) => {
@@ -93,6 +136,16 @@ const Contact = (): JSX.Element => {
     });
     setSocials(newSocialMediaArr);
   };
+
+  const BudgetField = ({ value, onChange }: any) => (
+    <div className={styles.budget}>
+      {budgetArr.map((temp) => (
+        <button key={temp.id} value={value} onClick={() => onChange(temp.text)}>
+          {temp.text}
+        </button>
+      ))}
+    </div>
+  );
 
   return (
     <section id="Contact" className={styles.wrapper}>
@@ -151,8 +204,8 @@ const Contact = (): JSX.Element => {
             <input
               type="name"
               // @ts-ignore: Unreachable code error
-              {...register("name")}
-              name="name"
+              {...register("nameAndCompany", { required: true })}
+              name="nameAndCompany"
             />
           </div>
           <div>
@@ -178,15 +231,16 @@ const Contact = (): JSX.Element => {
             >
               Project Budget
             </motion.label>
-            <input
-              type="range"
-              min={1}
-              max={100}
+            <Controller
+              control={control}
               // @ts-ignore: Unreachable code error
-              {...register("budget")}
               name="budget"
+              // @ts-ignore: Unreachable code error
+              defaultValue={"$10k-$20k"}
+              render={({ field: { onChange, value } }) => (
+                <BudgetField onChange={onChange} value={value} />
+              )}
             />
-            <span>{`${watchFields[1]} k`}</span>
           </div>
           <div>
             <motion.label
@@ -200,11 +254,12 @@ const Contact = (): JSX.Element => {
               type="range"
               min={1}
               max={12}
+              defaultValue={1}
               // @ts-ignore: Unreachable code error
               {...register("timeline")}
               name="timeline"
             />
-            <span>{`${watchFields[0]} month`}</span>
+            <span>{`${watchFields[0] ?? 1} month`}</span>
           </div>
           <div>
             <motion.label
