@@ -81,6 +81,8 @@ type Inputs = {
 
 const Contact = (): JSX.Element => {
   const [socials, setSocials] = useState(socialMediaArr);
+  const [selectedBudget, setSelectedBudget] = useState("");
+
   const {
     register,
     handleSubmit,
@@ -140,8 +142,17 @@ const Contact = (): JSX.Element => {
   const BudgetField = ({ value, onChange }: any) => (
     <div className={styles.budget}>
       {budgetArr.map((temp) => (
-        <button key={temp.id} value={value} onClick={() => onChange(temp.text)}>
-          {temp.text}
+        <button
+          key={temp.id}
+          value={value}
+          onClick={() => {
+            onChange(temp.text);
+            setSelectedBudget(temp.id);
+          }}
+        >
+          <p className={temp.id == selectedBudget ? styles.selectedBudget : ""}>
+            {temp.text}
+          </p>
         </button>
       ))}
     </div>

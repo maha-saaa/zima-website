@@ -69,73 +69,75 @@ const Projects = (): JSX.Element => {
 
   return (
     <section id="Projects" className={styles.wrapper}>
-      <div className={styles.number}>
-        {projectsArr?.map((temp) => {
-          return (
-            <div
-              key={`${temp.id}`}
-              onClick={() => setSelectedProject(temp)}
-              className={
-                selectedProject.id === temp.id
-                  ? styles.selected
-                  : styles.notSelected
-              }
-            >
-              <motion.span
-                initial="hidden"
-                whileInView="visible"
-                variants={wordAnimation}
+      <div className={styles.data}>
+        <div className={styles.number}>
+          {projectsArr?.map((temp) => {
+            return (
+              <div
+                key={`${temp.id}`}
+                onClick={() => setSelectedProject(temp)}
+                className={
+                  selectedProject.id === temp.id
+                    ? styles.selected
+                    : styles.notSelected
+                }
               >
-                {temp.id}
-              </motion.span>
-            </div>
-          );
-        })}
-      </div>
-      <div className={styles.desc}>
-        <motion.span
-          className={styles.header}
-          initial="hidden"
-          whileInView="visible"
-          variants={wordAnimation}
-        >
-          SELECTED WORK
-        </motion.span>
-        <AnimatePresence exitBeforeEnter>
+                <motion.span
+                  initial="hidden"
+                  whileInView="visible"
+                  variants={wordAnimation}
+                >
+                  {temp.id}
+                </motion.span>
+              </div>
+            );
+          })}
+        </div>
+        <div className={styles.desc}>
           <motion.span
-            key={selectedProject ? selectedProject.id : "empty"}
+            className={styles.header}
             initial="hidden"
             whileInView="visible"
             variants={wordAnimation}
           >
-            {selectedProject.name}
+            SELECTED WORK
           </motion.span>
-        </AnimatePresence>
-        <AnimatePresence exitBeforeEnter>
-          <motion.span
-            key={selectedProject ? selectedProject.id : "empty"}
-            initial="hidden"
-            whileInView="visible"
-            variants={wordAnimation}
+          <AnimatePresence exitBeforeEnter>
+            <motion.span
+              key={selectedProject ? selectedProject.id : "empty"}
+              initial="hidden"
+              whileInView="visible"
+              variants={wordAnimation}
+            >
+              {selectedProject.name}
+            </motion.span>
+          </AnimatePresence>
+          <AnimatePresence exitBeforeEnter>
+            <motion.span
+              key={selectedProject ? selectedProject.id : "empty"}
+              initial="hidden"
+              whileInView="visible"
+              variants={wordAnimation}
+            >
+              {selectedProject.desc}
+            </motion.span>
+          </AnimatePresence>
+          <a
+            key={selectedProject.id}
+            href={selectedProject.link}
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            {selectedProject.desc}
-          </motion.span>
-        </AnimatePresence>
-        <a
-          key={selectedProject.id}
-          href={selectedProject.link}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <motion.span
-            className={styles.footer}
-            initial="hidden"
-            whileInView="visible"
-            variants={wordAnimation}
-          >
-            VIEW PROJECT
-          </motion.span>
-        </a>
+            <motion.span
+              className={styles.footer}
+              initial="hidden"
+              whileInView="visible"
+              variants={wordAnimation}
+            >
+              VIEW PROJECT
+            </motion.span>
+          </a>
+        </div>
       </div>
       <AnimatePresence exitBeforeEnter>
         <motion.div
@@ -154,6 +156,21 @@ const Projects = (): JSX.Element => {
           />
         </motion.div>
       </AnimatePresence>
+      <a
+        key={selectedProject.id}
+        href={selectedProject.link}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <motion.span
+          className={styles.mobileFooter}
+          initial="hidden"
+          whileInView="visible"
+          variants={wordAnimation}
+        >
+          VIEW PROJECT
+        </motion.span>
+      </a>
     </section>
   );
 };

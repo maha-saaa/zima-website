@@ -80,6 +80,9 @@
     align-items: flex-start;
     justify-content: center;
     margin: 3vh 0;
+    @media screen and (max-width: 600px) {
+      width: 100%;
+    }
     > input {
       border: none;
       background-color: var(--darkBlue);
@@ -89,6 +92,9 @@
       margin-top: 2vh;
       padding: 8px;
       color: var(--white);
+      @media screen and (max-width: 600px) {
+        width: 100%;
+      }
     }
   }
   > button:last-child {
@@ -138,9 +144,16 @@
       transform-origin: bottom left;
       color: var(--primaryBlue);
     }
+    > p {
+      margin: 0;
+    }
   }
   :hover {
     transform: scaleX(1);
     color: var(--white);
   }
+}
+
+.selectedBudget {
+  color: var(--white);
 }

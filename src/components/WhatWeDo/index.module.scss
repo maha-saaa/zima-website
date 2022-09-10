@@ -3,17 +3,17 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-end;
-  gap: 113px;
+  gap: 10vw;
   padding: 25vh 7vw;
 }
 
 .text {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; 
+  align-items: flex-start;
   width: 19.7vw;
-  @media screen and (max-width: 600px) {
-    min-width: 30vw;
+  @media screen and (max-width: 1000px) {
+    width: 100%;
   }
 }
 
@@ -29,7 +29,7 @@
   font-size: 1rem;
   font-weight: 400;
   @media screen and (max-width: 600px) {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
   }
 }
 
