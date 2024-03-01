@@ -1,6 +1,6 @@
 import sendgridMail from "@sendgrid/mail";
 import { NextApiRequest, NextApiResponse } from "next";
-import { ZIMAEMAIL } from "@/constants/urls";
+import { ZIMAEMAIL } from "@/utils/constants";
 
 sendgridMail.setApiKey(process.env.SENDGRID_API_KEY || "");
 
@@ -14,7 +14,7 @@ export default async function handler(
     to: ZIMAEMAIL,
     from: ZIMAEMAIL,
     subject,
-    text: message.replace(/\r\n/g, '<br />'),
+    text: message.replace(/\r\n/g, "<br />"),
   };
 
   try {

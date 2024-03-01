@@ -18,7 +18,7 @@ import {
   DRIBBLE,
   LINKEDIN,
   ZIMAEMAIL,
-} from "@/constants/urls";
+} from "@/utils/constants";
 
 const socialMediaArr = [
   {

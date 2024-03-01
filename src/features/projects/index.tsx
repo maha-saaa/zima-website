@@ -14,7 +14,7 @@ import {
   ZINONFTLANDINGPAGE,
   LONELYALNFTCOLLECTION,
   MOBILECRYPTOWALLET,
-} from "@/constants/urls";
+} from "@/utils/constants";
 
 type project = {
   id: string;

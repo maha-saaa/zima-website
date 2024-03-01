@@ -16,10 +16,9 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@/components/*": ["src/components/*"],
+      "@/components/*": ["src/features/*"],
       "@/utils/*": ["src/utils/*"],
       "@/styles/*": ["src/styles/*"],
-      "@/constants/*": ["src/constants/*"],
       "@/public/*": ["public/*"]
     }
   },
