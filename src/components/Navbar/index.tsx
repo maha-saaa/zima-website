@@ -2,7 +2,7 @@ import styles from "./index.module.scss";
 import Image from "next/image";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
-import zimaLogo from "@/public/images/zima-logo.png";
+import zimaLogo from "@/public/images/zima-logo.webp";
 import { wordAnimation } from "@/utils/animations";
 
 type navbarMenuType = {

@@ -4,14 +4,14 @@ import { motion } from "framer-motion";
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import { useState } from "react";
 import { wordAnimation } from "@/utils/animations";
-import twitterWhite from "@/public/images/twitter-white.png";
-import twitterGray from "@/public/images/twitter-gray.png";
-import instagramWhite from "@/public/images/instagram-white.png";
-import instagramGray from "@/public/images/instagram-gray.png";
-import dribbbleWhite from "@/public/images/dribbble-white.png";
-import dribbbleGray from "@/public/images/dribbble-gray.png";
-import linkedinWhite from "@/public/images/linkedin-white.png";
-import linkedinGray from "@/public/images/linkedin-gray.png";
+import twitterWhite from "@/public/images/twitter-white.svg";
+import twitterGray from "@/public/images/twitter-gray.svg";
+import instagramWhite from "@/public/images/instagram-white.svg";
+import instagramGray from "@/public/images/instagram-gray.svg";
+import dribbbleWhite from "@/public/images/dribbble-white.svg";
+import dribbbleGray from "@/public/images/dribbble-gray.svg";
+import linkedinWhite from "@/public/images/linkedin-white.svg";
+import linkedinGray from "@/public/images/linkedin-gray.svg";
 import {
   TWITTER,
   INSTAGRAM,

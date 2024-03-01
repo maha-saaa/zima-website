@@ -2,11 +2,11 @@ import styles from "./index.module.scss";
 import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import reticular from "@/public/images/reticular.png";
-import avacadoCamp from "@/public/images/3dAvacadoCamp.png";
-import zinoNftLandingPage from "@/public/images/zinoNftLandingPage.png";
-import lonelyAlNftCollection from "@/public/images/lonelyAlNftCollection.png";
-import mobileCryptoWallet from "@/public/images/mobileCryptoWallet.png";
+import reticular from "@/public/images/reticular.webp";
+import avacadoCamp from "@/public/images/3dAvacadoCamp.webp";
+import zinoNftLandingPage from "@/public/images/zinoNftLandingPage.webp";
+import lonelyAlNftCollection from "@/public/images/lonelyAlNftCollection.webp";
+import mobileCryptoWallet from "@/public/images/mobileCryptoWallet.webp";
 import { wordAnimation } from "@/utils/animations";
 import {
   RETICULAR,

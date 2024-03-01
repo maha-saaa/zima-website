@@ -2,7 +2,7 @@ import styles from "./index.module.scss";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { Link } from "react-scroll";
-import arrow from "@/public/images/arrow.png";
+import arrow from "@/public/images/arrow.svg";
 import { wordAnimation } from "@/utils/animations";
 
 const Hero = (): JSX.Element => {
@@ -53,7 +53,7 @@ const Hero = (): JSX.Element => {
         >
           Scroll
         </motion.span>
-        <Image src={arrow} alt="arrow" height={100} />
+        <Image src={arrow} alt="arrow" />
       </div>
     </section>
   );
