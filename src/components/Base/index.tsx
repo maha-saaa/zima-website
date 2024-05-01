@@ -1,8 +1,8 @@
 import styles from "./index.module.scss";
-import Hero from "src/features/Hero";
-import WhatWeDo from "src/features/WhatWeDo";
-import Projects from "src/features/projects";
-import Contact from "src/features/Contact";
+import Hero from "src/components/Hero";
+import WhatWeDo from "src/components/WhatWeDo";
+import Projects from "src/components/projects";
+import Contact from "src/components/Contact";
 import WebDesign from "../WebDesign";
 
 const Base = (): JSX.Element => {

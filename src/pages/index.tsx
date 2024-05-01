@@ -1,9 +1,9 @@
 import type { NextPage } from "next";
 import { NextSeo } from "next-seo";
 import { Canvas } from "@react-three/fiber";
-import Layout from "src/features/Layout";
-import Base from "src/features/Base";
-import Cube from "src/features/Cube";
+import Layout from "src/components/Layout";
+import Base from "src/components/Base";
+import Cube from "src/components/Cube";
 
 // dom components go here
 const DOM = () => {

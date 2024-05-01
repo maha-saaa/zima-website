@@ -1,5 +1,5 @@
 import styles from "./index.module.scss";
-import ParallaxText from "src/features/ParallaxText";
+import ParallaxText from "src/components/ParallaxText";
 
 const firstLine = ["Mobile App", "3D Design", "Wireframing"];
 const secondLine = ["Illustraion", "Development", "Strategy"];

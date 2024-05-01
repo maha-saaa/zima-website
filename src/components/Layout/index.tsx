@@ -1,4 +1,4 @@
-import Navbar from "src/features/Navbar";
+import Navbar from "src/components/Navbar";
 
 const Layout: React.FunctionComponent<any> = ({ children }): JSX.Element => {
   return (
